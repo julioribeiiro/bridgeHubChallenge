@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { primaryColor } from '../../utils/colors';
 import Button from '@mui/material/Button';
 
 const Container = styled.nav`
