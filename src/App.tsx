@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import MainPage from './pages/mainPage';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import InvestmentsPage from './pages/investmentsPage';
+import Header from './components/header';
+import SideBar from './components/sidebar';
 
 function App() {
+
+  const [openedSideMenu, setOpenedSideMenu] = useState(false)
+
+  const toggleSideMenu = () => {
+    setOpenedSideMenu(!openedSideMenu);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Header toggle={toggleSideMenu} />
+      <SideBar isOpen={openedSideMenu} toggle={toggleSideMenu} />
+      <Routes>
+        <Route path='/' element={<MainPage />} />
+        <Route path='/investments' element={<InvestmentsPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

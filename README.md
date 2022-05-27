@@ -1,3 +1,14 @@
+Node and npm version
+node v17.0.0 (npm v8.1.0)
+
+Installed libs
+styled-components
+@types/styled-components
+react-router-dom
+"@emotion/react": "^11.9.0",
+"@emotion/styled": "^11.8.1",
+"@mui/material": "^5.8.1",
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
