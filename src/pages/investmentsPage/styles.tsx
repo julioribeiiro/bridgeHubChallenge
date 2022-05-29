@@ -71,10 +71,23 @@ export const BottomContainer = styled.div`
 `
 
 export const WrapperContainer = styled.div`
+    min-width: 1400px;
     margin: 0 0 40px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media screen and (max-width: 1600px) {
+        min-width: 1200px;
+    }
+
+    @media screen and (max-width: 1400px) {
+        min-width: 1000px;
+    }
+
+    @media screen and (max-width: 768px) {
+        min-width: 200px;
+    }
 `
 
 export const FiltersContainer = styled.div`
