@@ -1,13 +1,14 @@
-Node and npm version
-node v17.0.0 (npm v8.1.0)
+### Node and npm version
+- node v17.0.0 (npm v8.1.0)
 
-Installed libs
-styled-components
-@types/styled-components
-react-router-dom
-"@emotion/react": "^11.9.0",
-"@emotion/styled": "^11.8.1",
-"@mui/material": "^5.8.1",
+### Installed libs
+- "styled-components": 5.3.5
+- @types/styled-components
+- "react-router-dom": 6.3.0
+- "@emotion/react": 11.9.0
+- "@emotion/styled": 11.8.1
+- "@mui/material": 5.8.1
+- "react-number-format": 4.9.3
 
 # Getting Started with Create React App
 
