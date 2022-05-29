@@ -1,26 +1,47 @@
 import styled from 'styled-components';
 
-const ServicesWrapper = styled.div`
-    max-width: 1000px;
+export const MainContainer = styled.div`
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+`
+
+export const PageTitle = styled.h1`
+    width: 100%;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 0 0 10px 15px;
+    border-bottom: 1px solid #c4c4c4;
+`
+
+export const InvestmentsWrapper = styled.div`
+    max-width: 1700px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     align-items: center;
     grid-gap: 16px;
-    padding: 0 50px;
+    padding: 20px;
     z-index: 3;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1400px) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media screen and (max-width: 1100px) {
         grid-template-columns: 1fr 1fr;
     }
 
     @media screen and (max-width: 768px) {
         grid-template-columns: 1fr;
-        padding: 0 20px;
+        padding: 10px;
     }
 `;
 
-const ServicesCard = styled.div`
+export const InvestmentCardsContainer = styled.div`
+    overflow-x: hidden;
     background: #fff;
     display: flex;
     align-items: center;
@@ -38,21 +59,42 @@ const ServicesCard = styled.div`
     }
 `;
 
-const ServicesIcon = styled.img`
-    height: 160px;
-    width: 160px;
-    margin-bottom: 10px;
-`;
+export const BottomContainer = styled.div`
+    display: flex;
+    width: 99%;
+    margin:0 0 0 20px;
 
-const ServicesH2 = styled.h2`
-    font-size: 1rem;
-    margin-bottom: 10px;
-    text-align: center;
-`;
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        margin: 0;
+    }
+`
 
-const ServicesP = styled.p`
-    font-size: 1rem;
-    text-align: center;
-`;
+export const WrapperContainer = styled.div`
+    margin: 0 0 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
 
-export { ServicesWrapper, ServicesCard, ServicesIcon, ServicesH2, ServicesP };
+export const FiltersContainer = styled.div`
+    width: 300px;
+    height: auto;
+
+    @media screen and (max-width: 768px) {
+        margin-bottom: 25px;
+        border-bottom: 1px solid #c4c4c4;
+    }
+`
+
+export const FilterTitle = styled.h3`
+    font-size: 18px;
+`
+
+export const FilterSubTitle = styled.h4`
+    font-size: 14px;
+    color: #000;
+    font-weight: 600;
+    margin: 20px 0 0 0;
+`
+

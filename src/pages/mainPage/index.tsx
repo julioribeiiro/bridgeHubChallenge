@@ -1,11 +1,6 @@
-import React, { useState } from 'react';
-import Header from '../../components/header';
-import SideBar from '../../components/sidebar';
-
-// import { Container } from './styles';
+import React from 'react';
 
 const MainPage: React.FC = () => {
-
 
     return (
         <div style={{ height: 'auto' }}>

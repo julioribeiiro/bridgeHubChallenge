@@ -8,6 +8,7 @@ const Container = styled.nav`
     width: 100%;
     flex-direction: row;
     position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
     @media screen and (max-width: 768px) {
         justify-content: center;

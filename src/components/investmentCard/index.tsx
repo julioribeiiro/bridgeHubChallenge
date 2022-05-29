@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     Container,
     IconsContainer,
@@ -21,36 +21,38 @@ import InformationBottomCard from '../informationBottomCard';
 import Button from '@mui/material/Button';
 import { primaryColor } from '../../utils/colors';
 import { InvestmentTypes } from '../../constants/investmentTypes'
+import { useNavigate } from 'react-router-dom'
+import { InvestmentProps, investmentsList } from '../../constants/availableInvestments';
 
 
 interface InvestmentCardProps {
-    name: string
-    type: number
-    address: string
-    description: string
-    collected: string
-    reserved: string
-    objective: string
+    id: number
 }
 
-const InvestmentCard = ({
-    name,
-    type,
-    address,
-    description,
-    collected,
-    reserved,
-    objective }: InvestmentCardProps) => {
-    const restaurant = require('../../assets/images/restaurant.jpeg')
+const InvestmentCard = ({ id }: InvestmentCardProps) => {
+
+    const [investment, setInvestment] = useState<InvestmentProps>()
+
+    useEffect(() => {
+        setInvestment(investmentsList.filter((item) => item.id === id)[0])
+    }, [id])
+
+    const navigate = useNavigate()
+
     const [selectedIcons, setSelectedIcons] = useState({
         favorite: false,
         share: false,
         notification: false
     })
 
+    const handleClickDetails = (e: any) => {
+        e.preventDefault()
+        navigate(`/details/${id}`)
+    }
+
     return (
         <Container>
-            <TopImage src={restaurant} alt='restaurant-1' />
+            <TopImage src={investment?.image} alt='image' />
             <WaveContainer>
                 <WaveIcon />
             </WaveContainer>
@@ -73,19 +75,19 @@ const InvestmentCard = ({
             </IconsContainer>
             <BottomCardContainer>
                 <CardInformationContainer>
-                    <CardBusinessName>{name}</CardBusinessName>
-                    <CardBusinessType>{InvestmentTypes[type]}</CardBusinessType>
-                    <CardBusinessAddress>{address}</CardBusinessAddress>
+                    <CardBusinessName>{investment?.name}</CardBusinessName>
+                    <CardBusinessType>{InvestmentTypes[investment?.type ? investment?.type : 0]}</CardBusinessType>
+                    <CardBusinessAddress>{investment?.address}</CardBusinessAddress>
                 </CardInformationContainer>
                 <CardBusinessDescription>
-                    {description}
+                    {investment?.description}
                 </CardBusinessDescription>
                 <InformationSquaresContainer>
-                    <InformationBottomCard title='Captado' number={collected} />
-                    <InformationBottomCard title='Reservado' number={reserved} />
-                    <InformationBottomCard title='Objetivo' number={objective} />
+                    <InformationBottomCard title='Captado' number={investment?.collected ? investment?.collected : ''} />
+                    <InformationBottomCard title='Reservado' number={investment?.reserved ? investment?.reserved : ''} />
+                    <InformationBottomCard disabled title='Objetivo' number={investment?.objective ? investment?.objective : ''} />
                 </InformationSquaresContainer>
-                <Button style={{ background: primaryColor, width: '100%', marginTop: '15px' }} variant="contained">Detalhes</Button>
+                <Button onClick={handleClickDetails} style={{ borderRadius: '20px', background: primaryColor, width: '100%', marginTop: '15px' }} variant="contained">Detalhes</Button>
             </BottomCardContainer>
         </Container>
     );

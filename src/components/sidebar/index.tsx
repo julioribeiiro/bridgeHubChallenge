@@ -12,8 +12,6 @@ interface SideBarProps {
 
 const SideBar = ({ isOpen, toggle }: SideBarProps): JSX.Element => {
 
-
-
     return (
         <SidebarContainer isOpen={isOpen} onClick={toggle}>
             <Icon onClick={toggle}>

@@ -8,7 +8,7 @@ interface SidebarContainerProps {
 
 const SidebarContainer = styled.aside`
     position: absolute;
-    top: 0;
+    left: 0px;
     z-index: 999;
     width: 100%;
     height: 100%;
@@ -16,8 +16,7 @@ const SidebarContainer = styled.aside`
     display: grid;
     align-items: center;
     transition: 0.3s ease-in-out;
-    opacity: ${(props: SidebarContainerProps) => (props.isOpen ? '100%' : '0')};
-    right: ${(props: SidebarContainerProps) => (props.isOpen ? '0' : '-100%')};
+    top: ${(props: SidebarContainerProps) => (props.isOpen ? '0' : '-100%')};
 `;
 
 const Icon = styled.div`
@@ -28,14 +27,12 @@ const Icon = styled.div`
     font-size: 2rem;
     cursor: pointer;
     outline: none;
-
 `;
 
 const SidebarMenu = styled.ul`
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, 80px);
-    text-align: center;
 
     @media screen and (max-width: 480px) {
         grid-template-rows: repeat(6, 60px);
@@ -43,6 +40,8 @@ const SidebarMenu = styled.ul`
 `;
 
 const SidebarLink = styled(Link)`
+    margin-left: -50px;
+    width: auto;
     display: flex;
     align-items: center;
     justify-content: center;

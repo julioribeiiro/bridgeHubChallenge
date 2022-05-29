@@ -3,6 +3,7 @@ import { primaryColor } from '../../utils/colors'
 
 export const Container = styled.div`
     position: relative;
+    overflow-x: hidden;
 `
 
 export const TopImage = styled.img`

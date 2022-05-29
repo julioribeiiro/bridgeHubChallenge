@@ -4,13 +4,14 @@ import { Title, MainContainer, ContainerInformation } from './styles';
 interface InformationBottomCardProps {
     title: string
     number: string
+    disabled?: boolean
 }
 
-const InformationBottomCard = ({ title, number }: InformationBottomCardProps): JSX.Element => {
+const InformationBottomCard = ({ title, number, disabled }: InformationBottomCardProps): JSX.Element => {
     return (
         <MainContainer>
             <Title>{title}</Title>
-            <ContainerInformation>{number}</ContainerInformation>
+            <ContainerInformation disabled={disabled}>{number}</ContainerInformation>
         </MainContainer>
     );
 }

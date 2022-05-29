@@ -12,13 +12,13 @@ export const MainContainer = styled.div`
 
 export const Title = styled.span`
     margin: 10px 0 0 0;
-    font-weight: 500;
+    font-weight: 300;
     font-size: 12px;
     color: #FFF;
 `
 
 export const ContainerInformation = styled.p`
-    font-weight: 300;
+    font-weight: 700;
     font-size: 12px;
-    color: #FFF;
+    color: ${(props: { disabled?: boolean }) => (props.disabled && props.disabled !== undefined) ? '#aa2424' : '#FFF'};
 `

@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import InvestmentsPage from './pages/investmentsPage';
 import Header from './components/header';
 import SideBar from './components/sidebar';
+import DetailsPage from './pages/detailsPage';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
       <Routes>
         <Route path='/' element={<MainPage />} />
         <Route path='/investments' element={<InvestmentsPage />} />
+        <Route path='/details/:id' element={<DetailsPage />} />
       </Routes>
     </BrowserRouter>
   );

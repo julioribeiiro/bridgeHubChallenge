@@ -4,5 +4,5 @@ html *
    color: #5C6860;
    font-family: 'Lexend', sans-serif;
    font-weight: 400;
-   letter-spacing: .1em;
+   /* letter-spacing: .1em; */
 }
